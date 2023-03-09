@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+   var Pincode = "4455";
+   var attempts = 3;
+function ValidatePin() {
+    var pin=document.getElementById("pin").value;
+
+      if (Pincode === pin) {
+		document.write("PIN validated successfully");
+	} else {
+		attempts--;
+        document.getElementById("message").innerHTML=`Invalid pin ${attempts}attempts left`;
+		if (attempts == 0) {
+			document.getElementById("message").innerHTML=" Pin Blocked".fontcolor('red');
+ document.getElementById("message").disabled="true";
+		}
+	}
+}
+    </script>
+</head>
+<body >
+   <div>
+    <h4>PIN Validation</h4>
+    <div class="w-25">
+    <input type="password" id="pin" class="form-control">
+   </div>
+    <button id="lstbutton" class="btn btn-warning w-25 mt-3" onclick="ValidatePin()">Validate</button>
+    <p id="message"></p>
+   </div>
+</body>
+</html>
