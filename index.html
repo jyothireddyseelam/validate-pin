@@ -16,7 +16,7 @@ function ValidatePin() {
 		document.write("PIN validated successfully");
 	} else {
 		attempts--;
-        document.getElementById("message").innerHTML=`Invalid pin ${attempts}attempts left`;
+        document.getElementById("message").innerHTML=`Invalid pin ${attempts} attempts left`;
 		if (attempts == 0) {
 			document.getElementById("message").innerHTML=" Pin Blocked".fontcolor('red');
  document.getElementById("lstbutton").disabled="true";
